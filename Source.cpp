@@ -1,25 +1,25 @@
 #include<iostream>
 #include<conio.h>
 #include<string>
+#include<iomanip>
 using namespace std;
 #include"Header.h"
 #include"Menu.h"
-struct contro
-{
-	int *a=new int[10];
-};
+
 void Run_Program()
 {
-	/*LopHoc *x = new LopHoc[500];
-	int length = 0;
-	NhapLopVaDanhSach(x, length);*/
-	contro x;
-	x.*(DanhSachSinhVien::a+1) = 1;
-	cout << x.a;
-
-
-	cout << "\nCam on da su dung chuong trinh";
 	
+	LopHoc* a = new LopHoc[500];
+	int length = 0;
+	int menu = 3;
+	int n = 0;
+	do
+	{
+		n = ChonMenu(menu);
+		HamXuLyMenu(a, length, n);
+	} while (n!=0);
+	cout << "\nCam on da su dung chuong trinh";
+	delete [] a;
 	_getch();
 }
 int main()
